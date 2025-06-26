@@ -1,8 +1,7 @@
 package com.book.jpa.models;
 
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -11,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "TB_BOOK")
-public class BookModel implements Serializable {
+public class BookModel extends RepresentationModel<BookModel> implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
